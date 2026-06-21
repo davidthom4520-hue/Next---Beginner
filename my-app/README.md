@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Sentry setup
+
+1. Copy `.env.local.example` to `.env.local` and set `SENTRY_DSN` and/or `NEXT_PUBLIC_SENTRY_DSN`.
+2. Optionally create a `.sentryclirc` from `.sentryclirc.example` and set your `auth.token` or set `SENTRY_AUTH_TOKEN` in CI.
+3. Install dependencies and build (CI should have `SENTRY_AUTH_TOKEN` to upload source maps):
+
+```bash
+pnpm install
+pnpm build
+```
+
+If you want, run the Sentry setup wizard locally:
+
+```bash
+npx @sentry/wizard -i nextjs -p next
+```
+
